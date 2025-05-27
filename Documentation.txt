@@ -1,0 +1,63 @@
+Terms & Conditions for Timetable Web Application
+This document outlines the necessary data requirements and operational constraints for the proper functioning of the Timetable Web Application.
+
+1. Required CSV Files
+To use the Timetable Web Application, users must upload the following three CSV files:
+
+	Educator.csv
+
+	Batch.csv
+
+	Leaves.csv
+
+    Note:
+
+	Educator.csv and Batch.csv should be created based on the planned lecture schedules.
+
+	Leaves.csv must be updated and uploaded on a weekly basis.
+
+
+2. Handling Educator Leaves and Batch Off Days
+If any educator is on planned leave for a specific batch on a particular day, the corresponding cell in Leaves.csv must be filled with the term Planned Leave.
+
+If there are no classes scheduled for a batch on a specific day, the term Batch Off must be filled for all educators of that batch on that day in the Leaves.csv.
+
+    Example:
+	If Batch1 has no classes on Monday, then for each educator assigned to Batch1, the Monday column in Leaves.csv 	should contain Batch Off.
+
+
+3. Batch-wise Leave Details
+The Leaves.csv file must contain batch-wise entries.
+
+If an educator is assigned to multiple batches, their leave details must be specified separately for each batch.
+
+
+4. Consistency in Naming
+It is imperative that the following data entries remain consistent across all CSV files:
+
+	Subject Names
+
+	Goals
+
+	Educator Names
+
+	Batch UIDs
+
+     Inconsistencies in naming conventions will result in errors or incorrect timetable generation.
+
+
+5. CSV Structure Requirements
+All CSV files must retain their original column headings as defined by the application.
+
+Modifying or renaming any heading will prevent the file from uploading and will disrupt the timetable generation process.
+
+
+6. Lecture Frequency Constraints
+The total number of lectures assigned to educators must not exceed the number of available time slots for any batch.
+
+   If this constraint is violated:
+
+	The timetable may fail to generate, or
+
+	The system will automatically reduce the number of scheduled lectures to fit the available time slots.
+
